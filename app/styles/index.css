@@ -1,0 +1,46 @@
+.container {
+  margin: 0 1.5rem;
+  margin-top: -70px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  width: var(--main-content-width);
+}
+
+.user-banner {
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 0 6px var(--primary-border);
+  background-color: var(--primary-background);
+}
+
+.user-banner .grid {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 1rem;
+}
+
+.user-banner .emoji {
+  font-size: 1.5rem;
+  align-self: center;
+}
+
+.user-banner h1 {
+  font-size: 1.75rem;
+  line-height: 2rem;
+  text-transform: lowercase;
+}
+
+.user-banner .row {
+  grid-column: 2/-1;
+}
+
+.user-banner .session-text {
+  color: var(--gray-600);
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+}

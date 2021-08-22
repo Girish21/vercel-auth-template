@@ -1,0 +1,43 @@
+{
+  "private": true,
+  "name": "remix-app-template",
+  "description": "",
+  "license": "",
+  "scripts": {
+    "build": "remix build",
+    "dev": "remix dev",
+    "migration:dev": "prisma migrate dev",
+    "migration:setup": "prisma migrate reset --force",
+    "setup:dev": "docker-compose up -d && npm run migration:dev && npm run dev",
+    "setup": "npm i && docker-compose up -d && npm run migration:setup && npm run dev",
+    "start": "vercel dev",
+    "vercel-build": "prisma generate && prisma migrate deploy"
+  },
+  "dependencies": {
+    "@prisma/client": "^2.29.1",
+    "@remix-run/react": "^0.17.5",
+    "@remix-run/vercel": "^0.17.5",
+    "@vercel/node": "^1.8.3",
+    "bcrypt": "^5.0.1",
+    "dotenv": "^10.0.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-router-dom": "^6.0.0-beta.0",
+    "remix": "^0.17.5",
+    "yup": "^0.32.9"
+  },
+  "devDependencies": {
+    "@remix-run/dev": "^0.17.5",
+    "@types/bcrypt": "^5.0.0",
+    "@types/react": "^17.0.4",
+    "@types/react-dom": "^17.0.4",
+    "esbuild-register": "^3.0.0",
+    "prisma": "^2.29.1",
+    "typescript": "^4.1.2",
+    "vercel": "^21.2.2"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "sideEffects": false
+}

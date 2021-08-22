@@ -1,0 +1,47 @@
+.header_wrapper {
+  z-index: 1;
+  padding: 1.5rem 0;
+  margin: 0 1.5rem;
+}
+
+.header_align {
+  width: var(--main-content-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+
+.header_wrapper header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header_wrapper nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.header_wrapper nav > a,
+.header_wrapper nav form button {
+  padding-bottom: 4px;
+  color: var(--text);
+  background-image: linear-gradient(var(--text), var(--text));
+  background-repeat: no-repeat;
+  background-size: 0% 3px;
+  background-position: left bottom;
+  transition: background-size 300ms ease-out;
+  font-size: 1rem;
+}
+
+.header_wrapper nav > *:not(:first-child) {
+  margin-left: 1rem;
+}
+
+.header_wrapper nav > a:hover,
+.header_wrapper nav > a.active,
+.header_wrapper nav form button:hover {
+  background-size: 100% 3px;
+}
