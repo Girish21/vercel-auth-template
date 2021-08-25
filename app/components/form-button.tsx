@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useSubmit } from 'remix'
+import NavLink from './nav-link'
 
 type FormButtonType = {
   method?: string
@@ -13,7 +13,9 @@ const FormButton: React.FunctionComponent<FormButtonType> = ({
 }) => {
   return (
     <form method={method} action={action}>
-      <button type='submit'>{children}</button>
+      <NavLink renderType='button' type='submit'>
+        {children}
+      </NavLink>
     </form>
   )
 }

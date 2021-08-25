@@ -1,40 +1,40 @@
-import * as React from "react";
-import { Outlet } from "react-router-dom";
-import { LinksFunction, LoaderFunction, useRouteData } from "remix";
-import { Links, LiveReload, Meta, Scripts } from "remix";
-import stylesUrl from "./styles/global.css";
-import navStylesUrl from "./styles/nav.css";
+import * as React from 'react'
+import { Outlet } from 'react-router-dom'
+import { LinksFunction, LoaderFunction, useRouteData } from 'remix'
+import { Links, LiveReload, Meta, Scripts } from 'remix'
+import appUrl from './styles/app.css'
+import stylesUrl from './styles/global.css'
 
-import Nav from "./components/nav";
-import { getUserSession } from "./utils/session.server";
+import Nav from './components/nav'
+import { getUserSession } from './utils/session.server'
 
 type RouteData = {
-  isLoggedin: boolean;
-};
+  isLoggedin: boolean
+}
 
 export let links: LinksFunction = () => {
   return [
-    { rel: "stylesheet", href: stylesUrl },
-    { rel: "stylesheet", href: navStylesUrl },
-  ];
-};
+    { rel: 'stylesheet', href: appUrl },
+    { rel: 'stylesheet', href: stylesUrl },
+  ]
+}
 
 export const loader: LoaderFunction = async ({ request }) => {
-  const userSession = await getUserSession(request);
+  const userSession = await getUserSession(request)
 
-  const user = await userSession.getUser();
-  const isLoggedin = !!user;
+  const user = await userSession.getUser()
+  const isLoggedin = !!user
 
-  return { isLoggedin };
-};
+  return { isLoggedin }
+}
 
 function Document({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang='en'>
       <head>
-        <meta charSet="utf-8" />
-        <link rel="icon" href="/favicon.png" type="image/png" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charSet='utf-8' />
+        <link rel='icon' href='/favicon.png' type='image/png' />
+        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
         <Meta />
         <Links />
       </head>
@@ -42,21 +42,21 @@ function Document({ children }: { children: React.ReactNode }) {
         {children}
 
         <Scripts />
-        {process.env.NODE_ENV === "development" && <LiveReload />}
+        {process.env.NODE_ENV === 'development' && <LiveReload />}
       </body>
     </html>
-  );
+  )
 }
 
 export default function App() {
-  const data = useRouteData<RouteData>();
+  const data = useRouteData<RouteData>()
 
   return (
     <Document>
       <Nav isLoggedin={data.isLoggedin} />
       <Outlet />
     </Document>
-  );
+  )
 }
 
 export function ErrorBoundary({ error }: { error: Error }) {
@@ -69,5 +69,5 @@ export function ErrorBoundary({ error }: { error: Error }) {
         uncaught errors.
       </p>
     </Document>
-  );
+  )
 }
