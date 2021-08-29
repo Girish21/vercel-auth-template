@@ -1,7 +1,7 @@
 module.exports = {
   mode: 'jit',
   purge: ['./app/**/*.tsx', './app/**/*.jsx', './app/**/*.js', './app/**/*.ts'],
-  darkMode: 'media', // or 'media' or 'class'
+  darkMode: 'class', // or 'media' or 'class'
   theme: {
     extend: {
       backgroundSize: {
@@ -11,6 +11,9 @@ module.exports = {
       },
       transitionProperty: {
         background: 'background-size',
+      },
+      boxShadow: {
+        card: '0 -2px 10px rgba(0, 0, 0, 1)',
       },
     },
   },

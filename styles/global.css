@@ -1,16 +1,18 @@
 :root {
-  --text: #000;
+  --text: hsl(0, 0%, 98%);
   --text-contrast: #fff;
 
-  --danger: hsl(0, 95%, 45%);
+  --danger: hsl(0, 100%, 50%);
 
   --primary-gradient-start: hsl(190, 90%, 45%);
-  --primary-gradient-end: hsl(95, 80%, 50%);
+  --primary-gradient-end: hsl(95, 100%, 15%);
 
-  --secondary-light: hsl(210, 100%, 97%);
+  --secondary-background: hsl(0, 0%, 15%);
 
   --primary-border: hsla(268, 75%, 40%, 1);
-  --primary-background: hsla(268, 75%, 95%, 1);
+  --primary-background: hsla(268, 80%, 10%, 1);
+
+  --shadow-primary: 255, 255, 255;
 
   --gray-100: hsl(0, 0%, 90%);
   --gray-200: hsl(0, 0%, 80%);
@@ -23,6 +25,22 @@
   --gray-900: hsl(0, 0%, 10%);
 
   --main-content-width: min(100%, 48rem);
+}
+
+.light {
+  --text: #000;
+
+  --danger: hsl(0, 95%, 45%);
+
+  --primary-gradient-start: hsl(190, 90%, 45%);
+  --primary-gradient-end: hsl(95, 80%, 50%);
+
+  --secondary-background: hsl(210, 100%, 97%);
+
+  --shadow-primary: 0, 0, 0;
+
+  --primary-border: hsla(268, 75%, 40%, 1);
+  --primary-background: hsla(268, 75%, 95%, 1);
 }
 
 * {
@@ -181,4 +199,19 @@ body {
 
 a {
   text-decoration: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: 0;
+  -webkit-text-fill-color: var(--text);
+  -webkit-box-shadow: 0 0 0px 1000px var(--secondary-background) inset;
+  transition: background-color 5000s ease-in-out 0s;
 }

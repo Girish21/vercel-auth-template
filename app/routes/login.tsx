@@ -99,7 +99,7 @@ const Login = () => {
     <AuthContainer>
       <h1 className='sr-only'>login of awesome app!</h1>
       <AuthCard>
-        <H2 className='text-center'>login</H2>
+        <H2 className='text-center text-[color:var(--text)]'>login</H2>
         <Form method='post' replace autoComplete='off' className='space-y-4'>
           <Input
             id='new-email'

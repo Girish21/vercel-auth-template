@@ -30,30 +30,32 @@ const isNavLink = (props: NavLinkType): props is NavAnchor => {
 }
 
 const commonClassName =
-  'pb-1 text-[color:var(--text)] bg-gradient-to-r from-black to-black bg-no-repeat bg-nav-link bg-left-bottom transition-background duration-300 text-base hover:bg-nav-link-hover'
+  'pb-1 text-[color:var(--text)] bg-gradient-to-r from-[color:var(--text)] to-[color:var(--text)] bg-no-repeat bg-nav-link bg-left-bottom transition-background duration-300 text-base hover:bg-nav-link-hover'
 
 const activeClassName = 'bg-nav-link-hover'
 
 const NavLink = (props: NavLinkType) => {
   if (isButton(props)) {
+    const { renderType: _, ...rest } = props
     return (
-      <button {...props} className={clsx([commonClassName, props.className])} />
+      <button {...rest} className={clsx([commonClassName, props.className])} />
     )
   }
 
   if (isNavLink(props)) {
+    const { renderType: _, ...rest } = props
     return (
       <NavLinkImpl
-        {...props}
+        {...rest}
         className={clsx([commonClassName, props.className])}
         activeClassName={clsx(activeClassName)}
       />
     )
   }
 
-  return (
-    <Link {...props} className={clsx([commonClassName, props.className])} />
-  )
+  const { renderType: _, ...rest } = props
+
+  return <Link {...rest} className={clsx([commonClassName, props.className])} />
 }
 
 export default NavLink

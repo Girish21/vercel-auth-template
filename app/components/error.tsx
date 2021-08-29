@@ -8,7 +8,7 @@ const ErrorText: React.FunctionComponent<ErrorTextType> = (props) => {
     <span
       {...props}
       className={clsx([
-        'text-[color:var(--danger)] block text-[0.825rem] py-2',
+        'text-[color:var(--danger)] block text-[0.825rem] font-bold py-2',
         props.className,
       ])}
     />

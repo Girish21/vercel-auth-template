@@ -57,11 +57,11 @@ export default function Index() {
             >
               👋
             </span>
-            <h1 className='text-3xl leading-8 lowercase'>
+            <h1 className='text-3xl leading-8 lowercase text-[color:var(--text)]'>
               hi {data.user.firstName}
             </h1>
             <div className='col-[2/-1]'>
-              <span className='text-[color:var(--gray-600)] text-sm leading-6'>
+              <span className='text-[color:var(--gray-600)] dark:text-[color:var(--gray-200)] text-sm leading-6'>
                 session started at:{' '}
                 {new Intl.DateTimeFormat(data.locales).format(
                   new Date(data.sessionDetails.createdAt).getTime()
@@ -69,7 +69,7 @@ export default function Index() {
               </span>
             </div>
             <div className='col-[2/-1]'>
-              <span className='text-[color:var(--gray-600)] text-sm leading-6'>
+              <span className='text-[color:var(--gray-600)] dark:text-[color:var(--gray-200)] text-sm leading-6'>
                 session valid till:{' '}
                 {new Intl.DateTimeFormat(data.locales).format(
                   new Date(data.sessionDetails.expirationDate).getTime()

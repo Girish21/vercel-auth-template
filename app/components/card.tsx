@@ -8,7 +8,7 @@ const AuthCard: React.FunctionComponent<CardType> = (props) => {
     <section
       {...props}
       className={clsx([
-        'w-[min(100%,24rem)] shadow-md p-8 rounded-2xl space-y-4',
+        'dark:bg-[color:var(--gray-900)] w-[min(100%,24rem)] shadow-md dark:shadow-card p-8 rounded-2xl space-y-4',
         props.className,
       ])}
     />
